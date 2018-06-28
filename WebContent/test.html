@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="common.css" rel="stylesheet" type="text/css"/>
+    <link href="test_css.css" rel="stylesheet" type="text/css"/>
+    <script type="application/javascript" src="jquery-1.11.0.js"></script>
+</head>
+<body>
+<div id="all">
+    <!-- 头部div -->
+    <div class="head clearfix">
+        <div class="head1"><img src="img/head1.png"/></div>
+        <div class="head1"><img src="img/head2.png"/></div>
+        <div class="head1"><img src="img/head3.png"/></div>
+        <div class="head1"><img src="img/head4.png"/></div>
+        <div class="head1 special"><img src="img/head5.png"/></div>
+        <!--<div class="head clearfix"><div class="time"></div></div>-->
+        <div class="head1 time"></div>
+        <div class="head1"><img src="img/head6.png"/></div>
+        <div class="head1"><img src="img/head7.png"/></div>
+    </div>
+
+    <div class="onepx"></div>
+
+    <!--次级头部div-->
+    <div class="head_secondary clearfix">
+        <div class="head_first">日期</div><div class="head_second_1"><input type="date" id="querydate"/></div>
+
+        <div class="head_first">班次</div><div class="head_second_2"><select><option></option><option>111</option></select></div>
+
+        <div class="head_first">班别</div><div class="head_second_2"><select><option></option><option>111</option></select></div>
+
+        <div class="head_first_1">站别</div><div class="head_second_2_1"><select><option></option><option>111</option></select></div>
+
+        <div class="head_first_2"><input type="button" id="querybtn" value="查询"/><input type="button" name="yesterday" value="昨天"/><input type="button" name="tomorrow" value="次天"/> </div>
+
+        <div class="head_first_3">讯息</div><div class="head_second_2_2"><input id="tip" type="text"/></div>
+    </div>
+
+    <div class="blank"></div>
+
+    <!-- 表格div -->
+    <div class="content">
+        <!--表格头div-->
+        <div class="content_header clearfix"><div class="content_header_olist" id="content_header_olist_id">操作清册</div><div class="content_header_ocontent" id="content_header_ocontent_id">操作内容</div></div>
+
+        <div class="blank-0"></div>
+        <!-- 用于切换的div -->
+        <div id="afterhide">
+
+            <!--表格查询条件-->
+            <div class="content_secondary clearfix"><div class="content_secondary_date">日期</div><div class="content_secondary_date_input"><input type="date"/></div><div class="content_secondary_date">班次</div><div class="content_secondary_txt"><input type="text"/></div><div class="content_secondary_date">班别</div><div class="content_secondary_txt"><input type="text"/></div><div class="content_secondary_date">站别</div><div class="content_secondary_last"><input type="text"/></div></div>
+
+            <div class="blank-1"></div>
+
+            <!--操作内容表-->
+            <div class="content_otable">
+                <table id="table">
+                    <tr><th>序号</th><th>高炉号</th><th>罐号</th><th>铁次</th><th>到达时间</th><th>脱硫号</th><th>到达重量(t)</th><th>离开重量(t)</th><th>脱前硫含量</th><th>脱后硫含量</th><th>是否命中</th><th>脱前温度</th><th>脱后温度</th><th>修改人</th></tr>
+
+                    <tr><td>合计</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- 操作清册表-->
+        <div id="nowhide">
+            <div class="hide_menu"><ul class="clearfix"><li><input type="button" value="新增" style="background: rgb(52,172,72);"/></li><li><input type="button" value="修改" style="background: rgb(251,172,69);"/></li><li><input type="button" value="删除" style="background: rgb(215,72,54);"/></li><li><input type="button" value="清空" style="background: rgb(251,172,69);"/></li></ul></div>
+
+            <div class="hide_title clearfix"><div class="hide_title_data">日期</div><div class="hide_title_input"><input type="date"/></div><div class="hide_title_data">班次</div><div class="hide_title_input"><select><option>1夜</option></select></div><div class="hide_title_data">班别</div><div class="hide_title_input"><select><option>A甲</option></select></div><div class="hide_title_data">站别</div><div class="hide_title_input"><select><option>1#脱硫站</option></select></div><div class="hide_title_data">操作人</div><div class="hide_title_input"><input type="text" value="wd管理者"/></div></div>
+
+            <div class="blank-3"></div>
+
+            <div class="hide_content_top"><table><thead><tr><th>脱硫号</th><th>高炉号</th><th>铁次</th><th>铁包包号</th><th>包龄</th><th>炉号</th><th>钢种</th><th>铁水去向</th></tr></thead>
+                <tbody><tr><td><input type="text" value="118040001"/></td><td><select><option>ss</option><option></option></select></td><td><input type="text"/></td><td><input type="text" value="Y29"/></td><td><input type="text" value="36"/></td><td></td><td></td><td><select><option>BOF4</option></select></td></tr></tbody></table></div>
+
+            <div class="blank-3"></div>
+
+            <div class="hide_content_middle" id="hide_content_middle_id"><table><tr><td>铁包到达时间</td><td>铁包离开时间</td><td>到达铁水重量(t)</td><td>离开铁水重量(t)</td><td>脱硫前铁水温度</td><td>脱硫后铁水温度</td></tr>
+                <tr rowspan="2" style="background: white"><td><input type="date" value="2018-04-02"/><br/><input type="text" value="0711"/> </td><td><input type="date" value="2018-04-02"/><br/><input type="text" value="0744"/> </td><td><input type="text" value="99.59"/></td><td><input type="text" value="0"/></td><td><input type="text" value="0"/></td><td><input type="text" value="0"/></td></tr>
+                <tr><td>KR开始时间</td><td>KR结束时间</td><td>脱硫前硫含量</td><td>脱硫后硫含量</td><td>目标硫含量</td><td>含硫下降率</td></tr>
+                <tr rowspan="2"><td><input type="date" value="2018-04-02"/><br/><input type="text" value="0712"/> </td><td><input type="date" value="2018-04-02"/><br/><input type="text" value="0738"/> </td><td><input type="text" value="0.027"/></td><td><input type="text" value="0"/></td><td><input type="text" value="0"/></td><td><input type="text" value="99"/></td></tr>
+                <tr><td>处理前扒渣开始时间</td><td>处理前扒渣结束时间</td><td>处理后扒渣开始时间</td><td>处理后扒渣结束时间</td><td>氮气用量(m3)</td><td>脱硫周期(min)</td></tr>
+                <tr rowspan="2"><td><input type="date"/><br/><input type="text"/> </td><td><input type="date"/><br/><input type="text"/></td><td><input type="date" value="2018-04-02"/><input type="text" value="0738"/></td><td><input type="date" value="2018-04-02"/><input type="text" value="0719"/></td><td><input type="text" value="29"/></td><td><input type="text" value="33"/></td></tr>
+            </table></div>
+        </div>
+    </div>
+
+
+    <!--<div id="testt" style="background: aquamarine;height: 500px;width: 100%;"><input type="text"></div>-->
+
+</div>
+
+
+
+<!-- 基于jquery的js脚本 -->
+<script>
+    $(function () {
+        $("#content_header_olist_id").click(function () {
+            $("#table").show();
+            $("#nowhide").hide();
+        });
+        // function f(e) {
+        //     e.css("background","rgb(118,226,255)");
+        // }
+        $("#content_header_olist_id").hover(function () {
+            $(this).css("background","rgb(118,226,255)");
+        },function () {
+            $(this).css("background","rgb(118,163,255)");
+        });
+
+        $("#content_header_ocontent_id").click(function () {
+            $("#table").hide();
+            $("#nowhide").show();
+        });
+
+        $("#content_header_ocontent_id").hover(function () {
+            $(this).css("background","rgb(118,226,255)");
+        },function () {
+            $(this).css("background","rgb(118,163,255)");
+        });
+    });
+
+
+    <!--改变奇数行表格的背景颜色-->
+    $(function () {
+        $("#hide_content_middle_id table tr:odd").css("background-color","#fff");
+    });
+    // $(function () {
+    //     var $content="<tr style='text-align: center'><td>1</td><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+    //     $("#append").html($content);
+    //  var hh=$("#tabletitle").html();
+    //  var foot=$("#suma").html();
+    //  var $a="<tr><td>test</td></tr>"
+    // $("#table").html(hh+foot);
+    // });
+
+
+    <!--获取当前时间-->
+    $(document).ready(function () {
+        var time=new Date();
+        // SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        // var z=sdf.format(time);
+        var t=time.toLocaleString();
+        // alert(z);
+        $(".time").html(t);
+    });
+
+    // $(document).ready(function () {
+    $(function(){
+
+        $('#querybtn').click(function(){
+
+            $.ajax({
+                // alert("");
+
+                type: "GET",
+
+                url: "opdata",
+
+                contentType:"application/json;charset=utf-8",
+
+                data: {datetest:$("#querydate").val()},
+
+                dataType: "json",
+
+                async:true,
+
+                success: function(data){
+
+                    // $('#table').empty();   //清空resText里面的所有内容
+
+                    var html = '<tr><th>序号</th><th>高炉号</th><th>罐号</th><th>铁次</th><th>到达时间</th><th>脱硫号</th><th>到达重量(t)</th><th>离开重量(t)</th><th>脱前硫含量</th><th>脱后硫含量</th><th>是否命中</th><th>脱前温度</th><th>脱后温度</th><th>修改人</th></tr>';
+
+                    var i=1;
+                    $.each(data, function(queryIndex, query){
+                        if(query['glId']==null)	query['glId']="";
+                        if(query['tieCi']==null) query['tieCi']="";
+
+                        html +='<tr><td>'+i+'</td>' +'<td>' +query['glId']+ '</td>'+'<td>' +query['guanId']+ '</td>'+'<td>' +query['tieCi']+ '</td>'+'<td>' +query['arriveTime']+ '</td>'+'<td>' +query['tlId']+ '</td>'+'<td>' +query['arriveHeight']+ '</td>'+'<td>' +query['leaveHeight']+ '</td>'+'<td>' +query['preliu']+ '</td>'+'<td>' +query['afterliu']+ '</td>'+'<td>' +query['isHit']+ '</td>'+'<td>' +query['preTem']+ '</td>'+'<td>' +query['afterTem']+ '</td>'+'<td>' +query['modifier']+ '</td></tr>';
+                        i++;
+                    });
+                    html+='<tr><td>合计</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+
+                    $('#table').html(html);
+                    $('#testt input').html(html);
+
+                    $("#tip").val("查询成功");
+                    $("#tip").css("color","red");
+
+                },
+                error:function(){
+                    alert("请求错误");
+                }
+
+            });
+
+        });
+
+    });
+    // });
+
+
+</script>
+</body>
+</html>

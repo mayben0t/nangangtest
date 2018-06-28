@@ -1,0 +1,26 @@
+*,body{margin:0;padding:0}
+
+.clearfix:after {
+    display: block;
+    height: 0;
+    content: '.';
+    clear: both;
+    visibility: hidden;
+}
+
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin: 0; padding: 0;  font-family: "微软雅黑"; }
+
+/*----------用来移除向下箭头----------*/
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+/*----------用来移除叉叉按钮----------*/
+input[type="date"]::-webkit-clear-button{
+    display:none;
+}
+
+.hide{
+    display: none;
+}
