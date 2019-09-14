@@ -4,9 +4,11 @@ org\nangang\service\Service.class
 org\nangang\dao\NgEntityDao.class
 org\nangang\service\impl\ServiceImpl.class
 org\nangang\dao\impl\NgEntityDaoImpl.class
+org\nangang\controller\TestInvoke.class
 org\nangang\dao\opcontentDao.class
 org\nangang\controller\Test.class
 org\nangang\Test\testDao.class
 org\nangang\sqlcon\mySqlConn.class
 org\nangang\entity\NgEntity.class
+org\nangang\util\SqlUtil.class
 org\nangang\controller\TextListener.class
